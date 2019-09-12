@@ -17,22 +17,18 @@ class spin:
         self.spin=-self.spin
     def char(self):
         if self.spin==1:
-            return "+"
+            return "U"
         else:
-            return "-"
+            return "D"
 
 # Define cell class
 class cell:
     def __init__(self, i, j, n):
         self.spin=spin()
-##        self.left=((i-1+n)%n,j)
-##        self.right=((i+1)%n,j)
-##        self.up=(i,(j+1)%n)
-##        self.down=(i,(j-1+n)%n)
-        self.left=((i-1+n)%n,(j-1+n)%n)
-        self.right=((i+1)%n,(j+1)%n)
-        self.up=((i-1+n)%n,(j+1)%n)
-        self.down=((i+1)%n,(j-1+n)%n)
+        self.left=((i-1+n)%n,j)
+        self.right=((i+1)%n,j)
+        self.up=(i,(j+1)%n)
+        self.down=(i,(j-1+n)%n)
         self.propcount=0
     def cellspin(self):
         return self.spin.myspin()
